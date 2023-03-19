@@ -1,0 +1,26 @@
+{
+  "name": "time-book-client",
+  "version": "1.0.0",
+  "description": "time-book-client",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "scripts": {
+    "dev:timebook": "pnpm --filter @apps/timebook dev",
+    "dev:admin": "pnpm --filter @apps/admin dev",
+    "build:component": "pnpm --filter @packages/component build"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=16.13.1",
+    "pnpm": ">=7.22.0"
+  },
+  "packageManager": "pnpm@7.22.0",
+  "devDependencies": {
+    "pnpm": "^7.22.0"
+  }
+}
