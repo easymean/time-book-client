@@ -1,34 +1,34 @@
 {
-  "name": "time-book-client",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "@tanstack/react-query": "^4.29.5",
-    "@tanstack/react-query-devtools": "^4.29.6",
-    "react": "^18.2.0",
-    "react-device-detect": "^2.2.3",
-    "react-dom": "^18.2.0",
-    "recoil": "^0.7.7"
-  },
-  "devDependencies": {
-    "@tanstack/eslint-plugin-query": "^4.29.4",
-    "@types/react": "^18.0.28",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.37.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.7",
-    "tailwindcss": "^3.3.1",
-    "typescript": "^4.9.3",
-    "vite": "^4.2.0"
-  }
+	"name": "time-book-client",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@tanstack/react-query": "^4.29.5",
+		"@tanstack/react-query-devtools": "^4.29.6",
+		"react": "^18.2.0",
+		"react-device-detect": "^2.2.3",
+		"react-dom": "^18.2.0",
+		"zustand": "^4.3.8"
+	},
+	"devDependencies": {
+		"@tanstack/eslint-plugin-query": "^4.29.4",
+		"@types/react": "^18.0.28",
+		"@types/react-dom": "^18.0.11",
+		"@vitejs/plugin-react": "^3.1.0",
+		"autoprefixer": "^10.4.14",
+		"eslint": "^8.37.0",
+		"eslint-config-prettier": "^8.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"postcss": "^8.4.21",
+		"prettier": "^2.8.7",
+		"tailwindcss": "^3.3.1",
+		"typescript": "^4.9.3",
+		"vite": "^4.2.0"
+	}
 }

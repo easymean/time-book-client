@@ -16,10 +16,10 @@ specifiers:
   react: ^18.2.0
   react-device-detect: ^2.2.3
   react-dom: ^18.2.0
-  recoil: ^0.7.7
   tailwindcss: ^3.3.1
   typescript: ^4.9.3
   vite: ^4.2.0
+  zustand: ^4.3.8
 
 dependencies:
   '@tanstack/react-query': 4.29.5_biqbaboplfbrettd7655fr4n2y
@@ -27,7 +27,7 @@ dependencies:
   react: 18.2.0
   react-device-detect: 2.2.3_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
-  recoil: 0.7.7_biqbaboplfbrettd7655fr4n2y
+  zustand: 4.3.8_react@18.2.0
 
 devDependencies:
   '@tanstack/eslint-plugin-query': 4.29.4
@@ -1226,10 +1226,6 @@ packages:
     resolution: {integrity: sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==}
     dev: true
 
-  /hamt_plus/1.0.2:
-    resolution: {integrity: sha512-t2JXKaehnMb9paaYA7J0BX8QQAY8lwfQ9Gjf4pg/mk4krt+cmwmU652HOoWonf+7+EQV97ARPMhhVgU1ra2GhA==}
-    dev: false
-
   /has-flag/3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
@@ -1697,23 +1693,6 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /recoil/0.7.7_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-8Og5KPQW9LwC577Vc7Ug2P0vQshkv1y3zG3tSSkWMqkWSwHmE+by06L8JtnGocjW6gcCvfwB3YtrJG6/tWivNQ==}
-    peerDependencies:
-      react: '>=16.13.1'
-      react-dom: '*'
-      react-native: '*'
-    peerDependenciesMeta:
-      react-dom:
-        optional: true
-      react-native:
-        optional: true
-    dependencies:
-      hamt_plus: 1.0.2
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
-
   /remove-accents/0.4.2:
     resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
     dev: false
@@ -2019,3 +1998,19 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
     dev: true
+
+  /zustand/4.3.8_react@18.2.0:
+    resolution: {integrity: sha512-4h28KCkHg5ii/wcFFJ5Fp+k1J3gJoasaIbppdgZFO4BPJnsNxL0mQXBSFgOgAdCdBj35aDTPvdAJReTMntFPGg==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      immer: '>=9.0'
+      react: '>=16.8'
+    peerDependenciesMeta:
+      immer:
+        optional: true
+      react:
+        optional: true
+    dependencies:
+      react: 18.2.0
+      use-sync-external-store: 1.2.0_react@18.2.0
+    dev: false
