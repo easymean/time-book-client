@@ -1,8 +1,9 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import './App.css';
-import { BrowserView, MobileView } from 'react-device-detect';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools/build/lib/devtools';
 import React from 'react';
+import './App.scss';
+import { BrowserView, MobileView } from 'react-device-detect';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import { Button } from './component/button';
 
 const queryClient = new QueryClient();
 
@@ -24,13 +25,11 @@ function App() {
 		<QueryClientProvider client={queryClient}>
 			<BrowserView>
 				<div>
-					<h1 className="text-3xl font-bold underline">Hello world!</h1>
+					<Button className="ok">버튼</Button>
 				</div>
 			</BrowserView>
 			<MobileView>
-				<div>
-					<h1 className="text-3xl font-bold underline">Hello world!</h1>
-				</div>
+				<div></div>
 			</MobileView>
 			<ReactQueryDevtools initialIsOpen />
 			{showDevtools && (
