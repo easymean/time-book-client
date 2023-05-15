@@ -4,7 +4,7 @@ specifiers:
   '@storybook/addon-essentials': ^7.0.11
   '@storybook/addon-interactions': ^7.0.11
   '@storybook/addon-links': ^7.0.11
-  '@storybook/addon-styling': ^1.0.8
+  '@storybook/addon-styling': 1.0.0-next.2
   '@storybook/blocks': ^7.0.11
   '@storybook/react': ^7.0.11
   '@storybook/react-vite': ^7.0.11
@@ -44,7 +44,7 @@ devDependencies:
   '@storybook/addon-essentials': 7.0.11_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-interactions': 7.0.11_biqbaboplfbrettd7655fr4n2y
   '@storybook/addon-links': 7.0.11_biqbaboplfbrettd7655fr4n2y
-  '@storybook/addon-styling': 1.0.8_33n3gbvrzwluz3foyhjtcqcyam
+  '@storybook/addon-styling': 1.0.0-next.2_33n3gbvrzwluz3foyhjtcqcyam
   '@storybook/blocks': 7.0.11_biqbaboplfbrettd7655fr4n2y
   '@storybook/react': 7.0.11_ygqkwb4gg3aean7xjfdauovyqq
   '@storybook/react-vite': 7.0.11_6uylmgnzlqpeawp7a5cr5koi6y
@@ -2221,8 +2221,8 @@ packages:
       ts-dedent: 2.2.0
     dev: true
 
-  /@storybook/addon-styling/1.0.8_33n3gbvrzwluz3foyhjtcqcyam:
-    resolution: {integrity: sha512-Ubi75gHNFO60Sjti2n/i3f0utERNOYcpsRkWHdzV+C26kUemLG+2riKHUt8zVbNskyJxA0EZxh84HYItRe4coA==}
+  /@storybook/addon-styling/1.0.0-next.2_33n3gbvrzwluz3foyhjtcqcyam:
+    resolution: {integrity: sha512-RA7/2gD4rQTYYN+mEu1L8eAIl8gwxtsJeREq4fEeuagp1TrcLPtIqp6HGrTTeANTvaf9JwKYWdjF+L8laupedg==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -2236,12 +2236,10 @@ packages:
       '@storybook/components': 7.0.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/core-events': 7.0.11
       '@storybook/manager-api': 7.0.11_biqbaboplfbrettd7655fr4n2y
-      '@storybook/node-logger': 7.0.11
       '@storybook/preview-api': 7.0.11
       '@storybook/theming': 7.0.11_biqbaboplfbrettd7655fr4n2y
       '@storybook/types': 7.0.11
       css-loader: 6.7.3
-      less-loader: 11.1.0
       postcss-loader: 7.3.0_postcss@8.4.21
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -2250,7 +2248,6 @@ packages:
       style-loader: 3.3.2
     transitivePeerDependencies:
       - fibers
-      - less
       - node-sass
       - postcss
       - sass
@@ -5848,16 +5845,6 @@ packages:
       app-root-dir: 1.0.2
       dotenv: 16.0.3
       dotenv-expand: 10.0.0
-    dev: true
-
-  /less-loader/11.1.0:
-    resolution: {integrity: sha512-C+uDBV7kS7W5fJlUjq5mPBeBVhYpTIm5gB09APT9o3n/ILeaXVsiSFTbZpTJCJwQ/Crczfn3DmfQFwxYusWFug==}
-    engines: {node: '>= 14.15.0'}
-    peerDependencies:
-      less: ^3.5.0 || ^4.0.0
-      webpack: ^5.0.0
-    dependencies:
-      klona: 2.0.6
     dev: true
 
   /leven/3.1.0:
