@@ -1,0 +1,25 @@
+.day {
+	width: 1rem;
+	height: 2rem;
+	text-align: center;
+
+	> span {
+		&.blue {
+			color: blue;
+		}
+
+		&.red {
+			color: red;
+		}
+	}
+}
+
+.dow {
+	&.blue {
+		color: blue;
+	}
+
+	&.red {
+		color: red;
+	}
+}
