@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Route, Routes } from 'react-router-dom';
 import Home from './page/Home';
-import GlobalLayout from './component/molecules/GlobalLayout/GlobalLayout';
 
 const queryClient = new QueryClient();
 
@@ -25,14 +24,12 @@ function App() {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<GlobalLayout>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/login" />
-					<Route path="/add" />
-					<Route path="/my" />
-				</Routes>
-			</GlobalLayout>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="/login" />
+				<Route path="/add" />
+				<Route path="/my" />
+			</Routes>
 			<ReactQueryDevtools initialIsOpen />
 			{showDevtools && (
 				<React.Suspense fallback={null}>
