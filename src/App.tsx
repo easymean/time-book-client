@@ -3,7 +3,9 @@ import './App.scss';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
-import { Button } from './component/button';
+import { Route, Routes } from 'react-router-dom';
+import Home from './page/Home';
+import GlobalLayout from './component/molecules/GlobalLayout/GlobalLayout';
 
 const queryClient = new QueryClient();
 
@@ -23,14 +25,14 @@ function App() {
 
 	return (
 		<QueryClientProvider client={queryClient}>
-			<BrowserView>
-				<div>
-					<Button className="ok">버튼</Button>
-				</div>
-			</BrowserView>
-			<MobileView>
-				<div></div>
-			</MobileView>
+			<GlobalLayout>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route path="/login" />
+					<Route path="/add" />
+					<Route path="/my" />
+				</Routes>
+			</GlobalLayout>
 			<ReactQueryDevtools initialIsOpen />
 			{showDevtools && (
 				<React.Suspense fallback={null}>
