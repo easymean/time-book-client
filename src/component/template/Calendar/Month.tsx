@@ -1,5 +1,5 @@
 import { MouseEventHandler } from 'react';
-import { Button } from '../Button';
+import { Button } from '../../atom/Button';
 import './Month.scss';
 
 type TMonth = {
