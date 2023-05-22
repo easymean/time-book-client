@@ -1,15 +1,15 @@
 import { MouseEventHandler } from 'react';
 import { Button } from '../../atom/Button';
-import './Month.scss';
+import './TileGroups.scss';
 
-type TMonth = {
+type TTileGroups = {
 	month: string;
 	year: string;
 	children: React.ReactNode;
 	onClickPrev: MouseEventHandler<HTMLButtonElement>;
 	onClickNext: MouseEventHandler<HTMLButtonElement>;
 };
-export const Month = ({ month, year, children, onClickPrev, onClickNext }: TMonth) => {
+export const TileGroups = ({ month, year, children, onClickPrev, onClickNext }: TTileGroups) => {
 	return (
 		<div>
 			<section className="header">
@@ -22,9 +22,9 @@ export const Month = ({ month, year, children, onClickPrev, onClickNext }: TMont
 	);
 };
 
-type TWeekGrid = {
+type TTileGrid = {
 	children: React.ReactNode;
 };
-export const WeekGrid = ({ children }: TWeekGrid) => {
+export const TileGrid = ({ children }: TTileGrid) => {
 	return <div className="grid">{children}</div>;
 };

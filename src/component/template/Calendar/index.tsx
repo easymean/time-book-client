@@ -1,4 +1,4 @@
-import { Day } from './Day';
-import { Month } from './Month';
+import { TileWithNumber, TileWithString } from './Tile';
+import { TileGroups, TileGrid } from './TileGroups';
 
-export { Day, Month };
+export { TileWithNumber as Day, TileWithString as Dow, TileGroups as Month, TileGrid as Week };

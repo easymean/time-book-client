@@ -1,8 +1,8 @@
-import './Day.scss';
+import './Tile.scss';
 import classNames from 'classnames';
 
 type Color = 'BLACK' | 'RED' | 'BLUE';
-type TDay = {
+type TTileWithNumber = {
 	day: number;
 	children?: React.ReactNode;
 	color?: Color;
@@ -11,14 +11,14 @@ type TDay = {
 	isSelected?: boolean;
 };
 
-export const Day = ({
+export const TileWithNumber = ({
 	day,
 	children,
 	color = 'BLACK',
 	isPrev = false,
 	isToday = false,
 	isSelected = false,
-}: TDay) => {
+}: TTileWithNumber) => {
 	return (
 		<div className={classNames('day', { blur: isPrev })}>
 			<span
@@ -34,11 +34,11 @@ export const Day = ({
 	);
 };
 
-type TDow = {
+type TTileWithString = {
 	dow: string;
 	color?: Color;
 };
-export const Dow = ({ dow, color }: TDow) => {
+export const TileWithString = ({ dow, color }: TTileWithString) => {
 	return (
 		<div className={classNames('dow', { blue: color === 'BLUE', red: color === 'RED' })}>{dow}</div>
 	);
