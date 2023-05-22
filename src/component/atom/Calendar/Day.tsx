@@ -6,12 +6,29 @@ type TDay = {
 	day: number;
 	children?: React.ReactNode;
 	color?: Color;
+	isPrev?: boolean;
+	isToday?: boolean;
+	isSelected?: boolean;
 };
 
-export const Day = ({ day, children, color = 'BLACK' }: TDay) => {
+export const Day = ({
+	day,
+	children,
+	color = 'BLACK',
+	isPrev = false,
+	isToday = false,
+	isSelected = false,
+}: TDay) => {
 	return (
-		<div className="day">
-			<span className={classNames({ blue: color === 'BLUE', red: color === 'RED' })}>{day}</span>
+		<div className={classNames('day', { blur: isPrev })}>
+			<span
+				className={classNames(
+					{ today: isToday, blue: color === 'BLUE', red: color === 'RED' },
+					{ selected: isSelected },
+				)}
+			>
+				{day}
+			</span>
 			{children}
 		</div>
 	);
@@ -23,6 +40,6 @@ type TDow = {
 };
 export const Dow = ({ dow, color }: TDow) => {
 	return (
-		<div className={classNames('dow', { blue: color === 'BLUE', red: (color = 'RED') })}>{dow}</div>
+		<div className={classNames('dow', { blue: color === 'BLUE', red: color === 'RED' })}>{dow}</div>
 	);
 };

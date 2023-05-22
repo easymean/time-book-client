@@ -3,19 +3,19 @@ import { Button } from '../Button';
 import './Month.scss';
 
 type TMonth = {
-	month: number;
-	year: number;
+	month: string;
+	year: string;
 	children: React.ReactNode;
-	onClickPrev: (month: number) => MouseEventHandler<HTMLButtonElement>;
-	onClickNext: (month: number) => MouseEventHandler<HTMLButtonElement>;
+	onClickPrev: MouseEventHandler<HTMLButtonElement>;
+	onClickNext: MouseEventHandler<HTMLButtonElement>;
 };
 export const Month = ({ month, year, children, onClickPrev, onClickNext }: TMonth) => {
 	return (
 		<div>
 			<section className="header">
-				<Button onClick={onClickPrev(month - 1)}>이전</Button>
+				<Button onClick={onClickPrev}>이전</Button>
 				{month} {year}
-				<Button onClick={onClickPrev(month + 1)}>다음</Button>
+				<Button onClick={onClickNext}>다음</Button>
 			</section>
 			<section className="body">{children}</section>
 		</div>
