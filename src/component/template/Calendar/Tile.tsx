@@ -1,34 +1,39 @@
 import './Tile.scss';
 import classNames from 'classnames';
 
-type Color = 'BLACK' | 'RED' | 'BLUE';
 type TTileWithNumber = {
 	day: number;
 	children?: React.ReactNode;
-	color?: Color;
-	isPrev?: boolean;
+	isNeighborMonth?: boolean;
 	isToday?: boolean;
 	isSelected?: boolean;
+	isSaturday?: boolean;
+	isHoliday?: boolean;
+	onClick: (day: number) => void;
 };
 
 export const TileWithNumber = ({
 	day,
 	children,
-	color = 'BLACK',
-	isPrev = false,
+	isNeighborMonth = false,
 	isToday = false,
 	isSelected = false,
+	isSaturday = false,
+	isHoliday = false,
+	onClick,
 }: TTileWithNumber) => {
 	return (
-		<div className={classNames('day', { blur: isPrev })}>
-			<span
-				className={classNames(
-					{ today: isToday, blue: color === 'BLUE', red: color === 'RED' },
-					{ selected: isSelected },
-				)}
-			>
-				{day}
-			</span>
+		<div className={classNames('day', { blur: isNeighborMonth })} onClick={() => onClick(day)}>
+			<div className="top">
+				<span
+					className={classNames(
+						{ today: isToday, blue: !isToday && isSaturday, red: !isToday && isHoliday },
+						{ selected: isSelected },
+					)}
+				>
+					{day}
+				</span>
+			</div>
 			{children}
 		</div>
 	);
@@ -36,10 +41,9 @@ export const TileWithNumber = ({
 
 type TTileWithString = {
 	dow: string;
-	color?: Color;
+	isSaturday?: boolean;
+	isHoliday?: boolean;
 };
-export const TileWithString = ({ dow, color }: TTileWithString) => {
-	return (
-		<div className={classNames('dow', { blue: color === 'BLUE', red: color === 'RED' })}>{dow}</div>
-	);
+export const TileWithString = ({ dow, isSaturday, isHoliday }: TTileWithString) => {
+	return <div className={classNames('dow', { blue: isSaturday, red: isHoliday })}>{dow}</div>;
 };
