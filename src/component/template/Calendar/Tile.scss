@@ -1,0 +1,63 @@
+.day {
+	display: flex;
+	width: 3.5rem;
+	height: 6rem;
+	text-align: center;
+	position: relative;
+
+	&.blur {
+		opacity: 0.33;
+	}
+
+	.top {
+		position: absolute;
+		top: 0.5rem;
+		width: 100%;
+	}
+
+	span {
+		display: inline-block;
+
+		width: 1.5rem;
+		height: 1.5rem;
+		border-radius: 50%;
+
+		text-align: center;
+		color: black;
+		font-size: 0.8rem;
+		line-height: 1.5rem;
+
+		&.today {
+			background-color: black;
+			color: white;
+		}
+
+		&.blue {
+			color: blue;
+		}
+
+		&.red {
+			color: red;
+		}
+
+		&.selected {
+			background-color: gray;
+		}
+	}
+}
+
+.dow {
+	display: flex;
+	justify-content: center;
+	width: 3.5rem;
+	height: 1.5rem;
+	color: black;
+
+	&.blue {
+		color: blue;
+	}
+
+	&.red {
+		color: red;
+	}
+}

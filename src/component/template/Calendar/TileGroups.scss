@@ -1,0 +1,23 @@
+.tileGroups {
+	> .header {
+		display: flex;
+		justify-content: center;
+
+		height: 1.5rem;
+		padding-bottom: 1rem;
+
+		.summary {
+			color: black;
+			margin: 0 0.5rem;
+		}
+	}
+
+	> .body {
+		margin: 0 1rem;
+	}
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+}
