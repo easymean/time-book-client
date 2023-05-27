@@ -1,3 +1,5 @@
+import { TDow } from './type';
+
 export const dayOfWeek: TDow[] = [
 	{ name: '일', isHoliday: true },
 	{ name: '월' },

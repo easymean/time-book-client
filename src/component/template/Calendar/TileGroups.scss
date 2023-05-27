@@ -1,9 +1,20 @@
-.header {
-	display: flex;
-}
+.tileGroups {
+	> .header {
+		display: flex;
+		justify-content: center;
 
-.body {
-	margin: 0 1rem;
+		height: 1.5rem;
+		padding-bottom: 1rem;
+
+		.summary {
+			color: black;
+			margin: 0 0.5rem;
+		}
+	}
+
+	> .body {
+		margin: 0 1rem;
+	}
 }
 
 .grid {

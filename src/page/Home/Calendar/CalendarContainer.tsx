@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import { getFirstDateOfMonth, getNumberOfDaysInMonth, isMoonYear } from './utils';
 import { dayOfWeek as dayOfWeekData } from './constant';
 import { Day, Dow } from '../../../component/template/Calendar';
-import { TileGrid } from '../../../component/template/Calendar/TileGroups';
+import { TileGrid, TileGroups } from '../../../component/template/Calendar/TileGroups';
 
 const CalendarContainer = () => {
 	const today = new Date();
@@ -21,14 +21,14 @@ const CalendarContainer = () => {
 
 	const selectDay = useCallback(
 		(day: number, isPrevMonth: boolean = false, isNextMonth: boolean = false) => {
-			setSelected(day);
 			if (isPrevMonth) {
 				setMonth(month - 1);
 			} else if (isNextMonth) {
 				setMonth(month + 1);
 			}
+			setSelected(day);
 		},
-		[],
+		[month],
 	);
 
 	const isToday = (day: number, month: number, year: number) => {
@@ -92,10 +92,35 @@ const CalendarContainer = () => {
 		return dayArr;
 	}, [selected, month, year, day]);
 
+	const onClickPrevHandler = useCallback((month: number, year: number) => {
+		if (month == 1) {
+			setMonth(12);
+			setYear(year - 1);
+		} else {
+			setMonth(month - 1);
+		}
+	}, []);
+
+	const onClickNextHandler = useCallback((month: number, year: number) => {
+		if (month == 12) {
+			setMonth(1);
+			setYear(year + 1);
+		} else {
+			setMonth(month + 1);
+		}
+	}, []);
+
 	return (
 		<div>
-			<TileGrid>{dayOfWeek()}</TileGrid>
-			<TileGrid>{monthTiles}</TileGrid>
+			<TileGroups
+				month={month.toString()}
+				year={year.toString()}
+				onClickPrev={() => onClickPrevHandler(month, year)}
+				onClickNext={() => onClickNextHandler(month, year)}
+			>
+				<TileGrid>{dayOfWeek()}</TileGrid>
+				<TileGrid>{monthTiles}</TileGrid>
+			</TileGroups>
 		</div>
 	);
 };

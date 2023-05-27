@@ -11,10 +11,12 @@ type TTileGroups = {
 };
 export const TileGroups = ({ month, year, children, onClickPrev, onClickNext }: TTileGroups) => {
 	return (
-		<div>
+		<div className="tileGroups">
 			<section className="header">
 				<Button onClick={onClickPrev}>이전</Button>
-				{month} {year}
+				<span className="summary">
+					{month} {year}
+				</span>
 				<Button onClick={onClickNext}>다음</Button>
 			</section>
 			<section className="body">{children}</section>
