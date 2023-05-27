@@ -7,12 +7,12 @@ export function Button(props: TButton) {
 }
 
 type TImgButton = {
-	imgUrl: string;
+	imgurl: string;
 } & TButton;
 export function ImgButton(props: TImgButton) {
 	return (
 		<button {...props}>
-			<img src={props.imgUrl} />
+			<img src={props.imgurl} />
 		</button>
 	);
 }

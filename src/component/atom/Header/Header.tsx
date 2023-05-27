@@ -4,9 +4,9 @@ import './Header.scss';
 export const HomeHeader = () => {
 	return (
 		<div className="container">
-			<ImgButton imgUrl="" />
+			<ImgButton imgurl="" />
 			<div className="titleContainer">Time Book</div>
-			<ImgButton imgUrl="" />
+			<ImgButton imgurl="" />
 		</div>
 	);
 };
