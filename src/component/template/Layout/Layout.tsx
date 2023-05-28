@@ -1,15 +1,15 @@
 import { Header } from '../../atom/Header';
 import { LinkButton } from '../../atom/Link';
 import { HNavigation } from '../../atom/Navigation';
-import './Layout.scss';
+import styles from './Layout.module.scss';
 
 type TLayout = {
 	children?: React.ReactNode;
 };
 export const LayoutWithHeader = (props: TLayout) => {
 	return (
-		<div className="layout">
-			<section className="header">
+		<div className={styles.layout}>
+			<section className={styles.header}>
 				<Header />
 				<HNavigation>
 					<LinkButton>홈</LinkButton>

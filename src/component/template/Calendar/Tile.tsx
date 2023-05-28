@@ -1,4 +1,4 @@
-import './Tile.scss';
+import styles from './Tile.module.scss';
 import classNames from 'classnames';
 
 type TTileWithNumber = {
@@ -23,12 +23,16 @@ export const TileWithNumber = ({
 	onClick,
 }: TTileWithNumber) => {
 	return (
-		<div className={classNames('day', { blur: isNeighborMonth })} onClick={() => onClick(day)}>
-			<div className="top">
+		<div className={classNames(styles.day, { blur: isNeighborMonth })} onClick={() => onClick(day)}>
+			<div className={styles.top}>
 				<span
 					className={classNames(
-						{ today: isToday, blue: !isToday && isSaturday, red: !isToday && isHoliday },
-						{ selected: isSelected },
+						{
+							[styles.today]: isToday,
+							[styles.blue]: !isToday && isSaturday,
+							[styles.red]: !isToday && isHoliday,
+						},
+						{ [styles.selected]: isSelected },
 					)}
 				>
 					{day}
@@ -45,5 +49,9 @@ type TTileWithString = {
 	isHoliday?: boolean;
 };
 export const TileWithString = ({ dow, isSaturday, isHoliday }: TTileWithString) => {
-	return <div className={classNames('dow', { blue: isSaturday, red: isHoliday })}>{dow}</div>;
+	return (
+		<div className={classNames(styles.dow, { [styles.blue]: isSaturday, [styles.red]: isHoliday })}>
+			{dow}
+		</div>
+	);
 };

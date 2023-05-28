@@ -2,7 +2,7 @@ import { useCallback, useMemo, useRef, useState } from 'react';
 import { getFirstDateOfMonth, getNumberOfDaysInMonth, isMoonYear } from './utils';
 import { dayOfWeek as dayOfWeekData } from './constant';
 import { Day, Dow, Week, Month } from '../../../component/template/Calendar';
-import './Calendar.scss';
+import styles from './Calendar.module.scss';
 
 const CalendarContainer = () => {
 	const today = new Date();
@@ -118,7 +118,7 @@ const CalendarContainer = () => {
 				onClickPrev={() => onClickPrevHandler(month, year)}
 				onClickNext={() => onClickNextHandler(month, year)}
 			>
-				<div className="dowContainer">{dayOfWeek()}</div>
+				<div className={styles.dowContainer}>{dayOfWeek()}</div>
 				<Week>{monthTiles}</Week>
 			</Month>
 		</div>
