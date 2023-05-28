@@ -10,7 +10,7 @@ type ViteConfig = {
 // https://vitejs.dev/config/
 export default (args: ViteConfig) => {
 	const generateScopedName =
-		args.mode === 'production' ? '[hash:base64:2]' : '[name]_[local]__[hash:base64:2]';
+		args.mode === 'production' ? '[hash:base64:2]' : '[local]__[hash:base64:2]';
 	return defineConfig({
 		plugins: [react()],
 		resolve: {
