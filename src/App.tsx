@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Route, Routes } from 'react-router-dom';
 import Home from '@page/Home';
+import AddPage from '@page/AddPage';
 
 const queryClient = new QueryClient();
 
@@ -26,7 +27,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				<Route path="/login" />
-				<Route path="/add" />
+				<Route path="/add" element={<AddPage />} />
 				<Route path="/my" />
 			</Routes>
 			<ReactQueryDevtools initialIsOpen />
