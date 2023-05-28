@@ -13,13 +13,18 @@ export default (args: ViteConfig) => {
 		args.mode === 'production' ? '[hash:base64:2]' : '[name]_[local]__[hash:base64:2]';
 	return defineConfig({
 		plugins: [react()],
-
-		// scss 전역 사용
+		resolve: {
+			alias: [
+				{ find: '@', replacement: path.resolve(__dirname, './src') },
+				{ find: '@page', replacement: path.resolve(__dirname, './src/page') },
+			],
+		},
 		css: {
 			modules: {
 				localsConvention: 'camelCase',
 				generateScopedName,
 			},
+			// scss 전역 사용
 			preprocessorOptions: {
 				scss: { additionalData: '@import "./src/styles/colors";' },
 			},

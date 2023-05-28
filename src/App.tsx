@@ -4,7 +4,7 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import { Route, Routes } from 'react-router-dom';
-import Home from './page/Home';
+import Home from '@page/Home';
 
 const queryClient = new QueryClient();
 
