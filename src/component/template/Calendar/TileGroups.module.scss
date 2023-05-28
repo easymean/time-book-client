@@ -1,0 +1,28 @@
+.header {
+	display: flex;
+	justify-content: center;
+
+	height: 1.5rem;
+	padding-bottom: 0.5rem;
+
+	.summary {
+		color: black;
+		margin: 0 0.5rem;
+	}
+
+	.moveBtn {
+		width: 1.5rem;
+		height: 1.5rem;
+		line-height: 1.5rem;
+	}
+}
+
+.body {
+	margin: 0 1rem;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	height: 30rem;
+}

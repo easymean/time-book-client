@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.scss';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';

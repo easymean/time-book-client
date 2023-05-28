@@ -1,8 +1,8 @@
 import { useCallback, useMemo, useRef, useState } from 'react';
 import { getFirstDateOfMonth, getNumberOfDaysInMonth, isMoonYear } from './utils';
 import { dayOfWeek as dayOfWeekData } from './constant';
-import { Day, Dow } from '../../../component/template/Calendar';
-import { TileGrid, TileGroups } from '../../../component/template/Calendar/TileGroups';
+import { Day, Dow, Week, Month } from '../../../component/template/Calendar';
+import styles from './Calendar.module.scss';
 
 const CalendarContainer = () => {
 	const today = new Date();
@@ -112,15 +112,15 @@ const CalendarContainer = () => {
 
 	return (
 		<div>
-			<TileGroups
+			<Month
 				month={month.toString()}
 				year={year.toString()}
 				onClickPrev={() => onClickPrevHandler(month, year)}
 				onClickNext={() => onClickNextHandler(month, year)}
 			>
-				<TileGrid>{dayOfWeek()}</TileGrid>
-				<TileGrid>{monthTiles}</TileGrid>
-			</TileGroups>
+				<div className={styles.dowContainer}>{dayOfWeek()}</div>
+				<Week>{monthTiles}</Week>
+			</Month>
 		</div>
 	);
 };
