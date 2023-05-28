@@ -17,6 +17,7 @@ export default (args: ViteConfig) => {
 			alias: [
 				{ find: '@', replacement: path.resolve(__dirname, './src') },
 				{ find: '@page', replacement: path.resolve(__dirname, './src/page') },
+				{ find: '@component', replacement: path.resolve(__dirname, './src/component') },
 			],
 		},
 		css: {

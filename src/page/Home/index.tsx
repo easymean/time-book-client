@@ -1,4 +1,4 @@
-import { LayoutWithHeader } from '../../component/template/Layout';
+import { LayoutWithHeader } from '@component/template/Layout';
 import CalendarContainer from './Calendar/CalendarContainer';
 
 const Home = () => {
