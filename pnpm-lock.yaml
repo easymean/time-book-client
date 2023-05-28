@@ -12,10 +12,12 @@ specifiers:
   '@tanstack/eslint-plugin-query': ^4.29.4
   '@tanstack/react-query': ^4.29.5
   '@tanstack/react-query-devtools': ^4.29.6
+  '@types/classnames': ^2.3.1
   '@types/react': ^18.0.28
   '@types/react-dom': ^18.0.11
   '@vitejs/plugin-react': ^3.1.0
   autoprefixer: ^10.4.14
+  classnames: ^2.3.2
   eslint: ^8.37.0
   eslint-config-prettier: ^8.8.0
   eslint-plugin-prettier: ^4.2.1
@@ -36,6 +38,8 @@ specifiers:
 dependencies:
   '@tanstack/react-query': 4.29.5_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query-devtools': 4.29.6_6ufraba7zs65ngvban5jjen7be
+  '@types/classnames': 2.3.1
+  classnames: 2.3.2
   react: 18.2.0
   react-device-detect: 2.2.3_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
@@ -3020,6 +3024,13 @@ packages:
       '@types/node': 16.18.30
     dev: true
 
+  /@types/classnames/2.3.1:
+    resolution: {integrity: sha512-zeOWb0JGBoVmlQoznvqXbE0tEC/HONsnoUNH19Hc96NFsTAwTXbTqb8FMYkru1F/iqp7a18Ws3nWJvtA1sHD1A==}
+    deprecated: This is a stub types definition. classnames provides its own type definitions, so you do not need this installed.
+    dependencies:
+      classnames: 2.3.2
+    dev: false
+
   /@types/connect/3.4.35:
     resolution: {integrity: sha512-cdeYyv4KWoEgpBISTxWvqYsVy444DOqehiF3fM3ne10AmJ62RSyNkUnxMJXHQWRQQX2eR94m5y1IZyDwBjV9FQ==}
     dependencies:
@@ -3877,6 +3888,10 @@ packages:
     resolution: {integrity: sha512-eXTggHWSooYhq49F2opQhuHWgzucfF2YgODK4e1566GQs5BIfP30B0oenwBJHfWxAs2fyPB1s7Mg949zLf61Yw==}
     engines: {node: '>=8'}
     dev: true
+
+  /classnames/2.3.2:
+    resolution: {integrity: sha512-CSbhY4cFEJRe6/GQzIk5qXZ4Jeg5pcsP7b5peFSDpffpe1cqjASH/n9UTjBwOp6XpMSTwQ8Za2K5V02ueA7Tmw==}
+    dev: false
 
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
