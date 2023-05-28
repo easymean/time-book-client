@@ -1,7 +1,7 @@
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { getFirstDateOfMonth, getNumberOfDaysInMonth, isMoonYear } from './utils';
 import { dayOfWeek as dayOfWeekData } from './constant';
-import { Day, Dow, Week, Month } from '../../../component/template/Calendar';
+import { Day, Dow, Week, Month } from '@component/organism/Calendar';
 import styles from './Calendar.module.scss';
 
 const CalendarContainer = () => {
