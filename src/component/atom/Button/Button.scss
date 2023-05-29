@@ -7,3 +7,13 @@ button {
 	background-color: $main;
 	color: white;
 }
+
+.cancel {
+	background-color: white;
+	color: $main;
+	border-radius: 1px solid $main;
+}
+
+.iconBtn {
+	background-color: transparent;
+}
