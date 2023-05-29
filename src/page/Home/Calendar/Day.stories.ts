@@ -1,14 +1,14 @@
 import { Meta, StoryObj } from '@storybook/react';
-import { TileWithNumber } from './Tile';
+import { Day } from './Day';
 
 const tile = {
 	title: 'Calendar/TileWithNumber',
-	component: TileWithNumber,
+	component: Day,
 	tags: ['autodocs'],
 	argTypes: {
 		day: { control: { type: 'number', min: 1, max: 31 } },
 	},
-} satisfies Meta<typeof TileWithNumber>;
+} satisfies Meta<typeof Day>;
 
 export default tile;
 type Story = StoryObj<typeof tile>;

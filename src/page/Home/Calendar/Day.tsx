@@ -1,7 +1,7 @@
-import styles from './Tile.module.scss';
+import styles from './Day.module.scss';
 import classNames from 'classnames';
 
-type TTileWithNumber = {
+type TDay = {
 	day: number;
 	children?: React.ReactNode;
 	isNeighborMonth?: boolean;
@@ -12,7 +12,7 @@ type TTileWithNumber = {
 	onClick: (day: number) => void;
 };
 
-export const TileWithNumber = ({
+export const Day = ({
 	day,
 	children,
 	isNeighborMonth = false,
@@ -21,7 +21,7 @@ export const TileWithNumber = ({
 	isSaturday = false,
 	isHoliday = false,
 	onClick,
-}: TTileWithNumber) => {
+}: TDay) => {
 	return (
 		<div className={classNames(styles.day, { blur: isNeighborMonth })} onClick={() => onClick(day)}>
 			<div className={styles.top}>
@@ -43,12 +43,12 @@ export const TileWithNumber = ({
 	);
 };
 
-type TTileWithString = {
+type TDow = {
 	dow: string;
 	isSaturday?: boolean;
 	isHoliday?: boolean;
 };
-export const TileWithString = ({ dow, isSaturday, isHoliday }: TTileWithString) => {
+export const Dow = ({ dow, isSaturday, isHoliday }: TDow) => {
 	return (
 		<div className={classNames(styles.dow, { [styles.blue]: isSaturday, [styles.red]: isHoliday })}>
 			{dow}

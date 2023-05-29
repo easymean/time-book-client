@@ -1,8 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import { getFirstDateOfMonth, getNumberOfDaysInMonth, isMoonYear } from './utils';
-import { dayOfWeek as dayOfWeekData } from './constant';
-import { Day, Dow, Week, Month } from '@component/organism/Calendar';
 import styles from './Calendar.module.scss';
+import { CalendarTitle, Dows } from './CalendarHeader';
+import { CalendarBody } from './CalendarBody';
+import { Day } from './Day';
 
 const CalendarContainer = () => {
 	const today = new Date();
@@ -12,12 +13,6 @@ const CalendarContainer = () => {
 	const [year, setYear] = useState<number>(today.getFullYear());
 
 	const [selected, setSelected] = useState<number>(0);
-
-	const dayOfWeek = () => {
-		return dayOfWeekData.map((dow, idx) => (
-			<Dow dow={dow.name} isHoliday={dow.isHoliday} isSaturday={dow.isSaturday} key={idx} />
-		));
-	};
 
 	const selectDay = useCallback(
 		(day: number, isPrevMonth: boolean = false, isNextMonth: boolean = false) => {
@@ -112,15 +107,18 @@ const CalendarContainer = () => {
 
 	return (
 		<div>
-			<Month
-				month={month.toString()}
-				year={year.toString()}
-				onClickPrev={() => onClickPrevHandler(month, year)}
-				onClickNext={() => onClickNextHandler(month, year)}
-			>
-				<div className={styles.dowContainer}>{dayOfWeek()}</div>
-				<Week>{monthTiles}</Week>
-			</Month>
+			<section className={styles.header}>
+				<CalendarTitle
+					month={month.toString()}
+					year={year.toString()}
+					onClickPrev={() => onClickPrevHandler(month, year)}
+					onClickNext={() => onClickNextHandler(month, year)}
+				/>
+				<Dows />
+			</section>
+			<section className={styles.body}>
+				<CalendarBody>{monthTiles}</CalendarBody>
+			</section>
 		</div>
 	);
 };
