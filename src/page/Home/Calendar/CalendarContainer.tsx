@@ -34,7 +34,7 @@ const CalendarContainer = () => {
 		}
 	};
 
-	const monthTiles = useMemo(() => {
+	const days = useMemo(() => {
 		const moonyear = isMoonYear(year);
 		const firstDate = getFirstDateOfMonth(year, month - 1);
 		const startIdx = firstDate.getDay();
@@ -107,7 +107,7 @@ const CalendarContainer = () => {
 
 	return (
 		<div>
-			<section className={styles.header}>
+			<section className={styles.calendarHeader}>
 				<CalendarTitle
 					month={month.toString()}
 					year={year.toString()}
@@ -116,8 +116,8 @@ const CalendarContainer = () => {
 				/>
 				<Dows />
 			</section>
-			<section className={styles.body}>
-				<CalendarBody>{monthTiles}</CalendarBody>
+			<section className={styles.calendarBody}>
+				<CalendarBody>{days}</CalendarBody>
 			</section>
 		</div>
 	);

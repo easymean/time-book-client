@@ -17,7 +17,7 @@ export const LayoutWithHeader = (props: TLayout) => {
 					<LinkButton>통계</LinkButton>
 				</HNavigation>
 			</section>
-			{props.children}
+			<section className={styles.body}>{props.children}</section>
 		</div>
 	);
 };
