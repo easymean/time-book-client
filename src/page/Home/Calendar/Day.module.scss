@@ -23,13 +23,17 @@
 		border-radius: 50%;
 
 		text-align: center;
-		color: black;
 		font-size: 0.8rem;
 		line-height: 1.5rem;
 
 		&.today {
-			background-color: black;
-			color: white;
+			background-color: white;
+			color: black;
+
+			@media (prefers-color-scheme: light) {
+				background-color: black;
+				color: white;
+			}
 		}
 
 		&.blue {
@@ -51,7 +55,6 @@
 	justify-content: center;
 	min-width: 2rem;
 	height: 24px;
-	color: black;
 
 	&.blue {
 		color: blue;
