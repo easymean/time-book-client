@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 type ViteConfig = {
 	mode: string;
@@ -12,7 +13,7 @@ export default (args: ViteConfig) => {
 	const generateScopedName =
 		args.mode === 'production' ? '[hash:base64:2]' : '[local]__[hash:base64:2]';
 	return defineConfig({
-		plugins: [react()],
+		plugins: [react(), cssInjectedByJsPlugin()],
 		resolve: {
 			alias: [
 				{ find: '@', replacement: path.resolve(__dirname, './src') },
@@ -32,9 +33,13 @@ export default (args: ViteConfig) => {
 		},
 		build: {
 			emptyOutDir: true,
+			sourcemap: 'inline',
+			minify: 'esbuild',
 			lib: {
+				entry: path.resolve(__dirname, './src/main.tsx'),
 				name: 'TimeBook',
-				entry: path.resolve(__dirname, 'src/main.tsx'),
+				formats: ['es', 'umd'],
+				fileName: format => `index.${format}.js`,
 			},
 		},
 	});
